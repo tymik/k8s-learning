@@ -1,3 +1,5 @@
+# For this to work with KIND, you need to configure load balancer.
+# See https://kind.sigs.k8s.io/docs/user/loadbalancer/
 apiVersion: v1
 kind: Service
 metadata:
