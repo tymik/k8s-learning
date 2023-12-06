@@ -6,15 +6,19 @@ metadata:
   # Kubernetes reports the line below as deprecated
   # and recommends using ingressClassName instead
   # annotations:
-  #   kubernetes.io/ingress.class: "nginx"
+    # kubernetes.io/ingress.class: "nginx"
 spec:
+  tls:
+    - hosts:
+        - dashboard.com
+      secretName: dashboard-com
   ingressClassName: nginx
   rules:
   - host: dashboard.com
     http:
       paths:
       - path: /
-        pathType: Exact  
+        pathType: Prefix  
         backend:
           service:
             name: kubernetes-dashboard
