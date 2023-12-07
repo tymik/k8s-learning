@@ -8,11 +8,11 @@ metadata:
   # annotations:
     # kubernetes.io/ingress.class: "nginx"
 spec:
+  ingressClassName: nginx
   tls:
     - hosts:
         - dashboard.com
       secretName: dashboard-com
-  ingressClassName: nginx
   rules:
   - host: dashboard.com
     http:
