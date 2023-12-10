@@ -1,0 +1,10 @@
+version: '3'
+
+tasks:
+  create-admin-user-token:
+    cmds:
+      - kubectl -n kubernetes-dashboard create token admin-user
+
+  get-admin-user-secret:
+    cmds:
+      - kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
