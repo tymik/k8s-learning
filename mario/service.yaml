@@ -1,0 +1,14 @@
+# original file comes from https://github.com/Aj7Ay/k8s-mario/tree/main
+# credits go to @Aj7Ay
+apiVersion: v1
+kind: Service
+metadata:
+  name: mario-service
+spec:
+  # type: LoadBalancer
+  selector:
+    app: mario
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
